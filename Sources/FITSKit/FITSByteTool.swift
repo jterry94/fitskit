@@ -61,7 +61,7 @@ public struct FITSByteTool {
             }
         case .INT16:
             return data.withUnsafeBytes { mptr8 in
-                mptr8.bindMemory(to: FITSByte_16.self).map{ (bzero + Float(bitpix: $0.bigEndian) * bscale)/Float(65535.0 / 10.0)  }
+                mptr8.bindMemory(to: FITSByte_16.self).map{ (bzero + Float(bitpix: $0.bigEndian) * bscale)/Float(65535.0 / 1000.0)  }
             }
         case .INT32:
             return data.withUnsafeBytes { mptr8 in
